@@ -16,17 +16,19 @@ namespace ConsoleApp1
         {
             Program p = new Program();
             p.Beowulf = new ArrayList();
+            p.Run();
         }
         public void Run() { this.ReadTextFiles(); }
         public void ReadTextFiles()
         {
-            using (StreamReader file = new StreamReader("U:/monu/beowulf.txt"))
+            using (StreamReader file = new StreamReader("U:/Users/727051/monu/beowulf.txt"))
             {
                 int counter = 0;
                 string ln;
                 while ((ln = file.ReadLine()) != null)
                 {
                     Console.WriteLine(ln);
+                    counter++;
                     Beowulf.Add(ln);
 
                 }
