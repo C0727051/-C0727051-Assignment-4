@@ -17,6 +17,9 @@ namespace ConsoleApp1
             Program p = new Program();
             p.Beowulf = new ArrayList();
             p.Run(); //Section A
+            string lines = System.IO.File.ReadAllText("U:/Users/727051/monu/beowulf.txt");
+            p.FindNumberOfBlankSpaces(lines); //Section B
+           
         }
         public void Run() { this.ReadTextFiles(); }
         public void ReadTextFiles()
@@ -42,8 +45,11 @@ namespace ConsoleApp1
             int countSpaces = 0;
             foreach (char c in line)
             {
-                if (char.IsLetter(c)) { countletters++; }
-                if (char.IsWhiteSpace(c)) { countletters++; }
+                if (char.IsLetter(c)) {
+                    countletters++; }
+                if (char.IsWhiteSpace(c)) { countSpaces++; }
+                Console.WriteLine($"File has {countSpaces} Blank Spaces.");
+                Console.WriteLine($"File has {countletters} Words.");
             }
             return countSpaces;
         }
