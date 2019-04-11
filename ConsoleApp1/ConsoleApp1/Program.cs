@@ -18,7 +18,7 @@ namespace ConsoleApp1
             p.Beowulf = new ArrayList();
             p.Run(); //Section A
             string lines = System.IO.File.ReadAllText("U:/Users/727051/monu/beowulf.txt");
-            p.FindNumberOfBlankSpaces(lines); //Section B
+            p.FindNumberOfBlankSpaces(lines); //(Section B )
            
         }
         public void Run() { this.ReadTextFiles(); }
