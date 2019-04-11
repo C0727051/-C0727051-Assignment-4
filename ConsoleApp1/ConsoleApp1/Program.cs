@@ -20,6 +20,7 @@ namespace ConsoleApp1
             string lines = System.IO.File.ReadAllText("U:/Users/727051/monu/beowulf.txt");
             p.FindNumberOfBlankSpaces(lines); //(Section B )
             p.ProcessArrayList();
+            p.NumLetters();
 
         }
         public void Run() { this.ReadTextFiles(); }
@@ -78,5 +79,17 @@ namespace ConsoleApp1
                 }
                 return false;
             }
+        public void NumLetters()
+        {
+
+            StreamReader reader = new StreamReader("U:/Users/727051/monu/beowulf.txt");
+            string lines = reader.ReadToEnd();
+            int num = 0;
+            foreach (char letter in lines)
+            { num++; }
+            Console.WriteLine("Total number of letters{0}",  num);
+
         }
+
     }
+}
