@@ -11,7 +11,7 @@ namespace ConsoleApp1
     class Program
     {
         ArrayList Beowulf;
-    
+
         static void Main(string[] args)
         {
             Program p = new Program();
@@ -19,7 +19,8 @@ namespace ConsoleApp1
             p.Run(); //Section A
             string lines = System.IO.File.ReadAllText("U:/Users/727051/monu/beowulf.txt");
             p.FindNumberOfBlankSpaces(lines); //(Section B )
-           
+            p.ProcessArrayList();
+
         }
         public void Run() { this.ReadTextFiles(); }
         public void ReadTextFiles()
@@ -53,6 +54,29 @@ namespace ConsoleApp1
             }
             return countSpaces;
         }
+        public void ProcessArrayList()
+        {
+            int LineNumber = 0;
+            foreach (var line in Beowulf)
 
+            {
+
+                if (!ContainWord(line.ToString().ToLower(), "war") && ContainWord(line.ToString().ToLower(), "fare"))
+                {
+                    Console.WriteLine(line);
+                    Console.WriteLine("Line number is {0}", LineNumber);
+                    LineNumber++;
+                }
+            }
+            Console.WriteLine(LineNumber);
+        }
+            public bool ContainWord(string line, string Word)
+            {
+                if (line.Contains(Word) == true)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
     }
-}
